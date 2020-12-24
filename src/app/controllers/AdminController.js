@@ -52,29 +52,26 @@ class AdminController {
     }
 
     const { email, oldPassword } = req.body;
-    const admin = await Admin.findByPk(req.adminId);
-
+   
+    const admin = await Admin.findOne({
+      where: { id: req.params.id }
+    })
+   
     if (email !== admin.email) {
-      const adminExists = await Admin.findOne({
-        where: { email },
-      });
-
+      const adminExists = await Admin.findOne({ where: { email } });
+      
       if (adminExists) {
-        return res.status(400).json({ error: 'admin ja existe' });
+        return res.status(400).json({ error: 'Usuario ja existe.' });
       }
     }
 
     if (oldPassword && !(await admin.checkPassword(oldPassword))) {
-      return res.status(401).json({ error: 'Password does not match' });
+      return res.status(401).json({ error: 'Senha difere da atual' });
     }
 
-    await admin.update(req.body);
+    const {name} = await admin.update(req.body);
 
-    return res.json({
-      id,
-      name,
-      email,
-    });
+    return res.json({ name, email});
   }
 }
 

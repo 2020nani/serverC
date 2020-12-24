@@ -16,8 +16,13 @@ class App {
     this.routes();
     this.exceptionHandler();
   }
-
   middlewares() {
+   
+    this.server.use(cors());
+    this.server.use(express.json());
+    
+  }
+ /* middlewares() {
     this.server.use(express.json());
     this.server.use((req, res, next) => {
       res.header("Access-Control-Allow-Origin", "*");
@@ -27,8 +32,21 @@ class App {
       this.server.use(cors())
       next()
     });
-  }
+    this.server.use((req, res, next) => {
+    res.header('Access-Control-Allow-Origin', '*');
+    res.header(
+        'Access-Control-Allow-Header',
+        'Origin, X-Requested-With, Content-Type, Accept, Authorization'
+    );
 
+    if (req.method === 'OPTIONS') {
+        res.header('Access-Control-Allow-Methods', 'PUT, POST, PATCH, DELETE, GET');
+        return res.status(200).send({});
+    }
+    next();
+});
+  }*/
+  
   routes() {
     this.server.use(routes);
   }
