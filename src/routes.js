@@ -15,6 +15,7 @@ routes.post('/login', SessionController.store);
 routes.post('/admins', AdminController.store);
 routes.use(authMiddleware);
 routes.put('/admins/:id', AdminController.update);
+routes.delete('/admins/:id', AdminController.delete);
 routes.post('/dados', checkFirstName, DadosController.store);
 routes.put('/dados/:id', DadosController.update);
 routes.delete('/dados/:id', DadosController.delete);

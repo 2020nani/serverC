@@ -11,7 +11,7 @@ class DadosController {
       participation: Yup.number().required().min(0.1).max(100),
     });
     if (!(await schema.isValid(req.body))) {
-      return console.log( 'Validacao Falhou' );
+      return res.status(400).json({ error: 'Validacao Falhou' });
     }
    
     let totalPorcentagem = 0
@@ -31,11 +31,10 @@ class DadosController {
     totalPorcentagem = totalPorcentagem + parseInt(participation)
 
     if (totalPorcentagem <= 100) {
-      await Dados.create(req.body)
+      const { id } = await Dados.create(req.body)
       return res.json(
-        firstname,
-        lastname,
-        participation,
+        id,
+        
       );
     } else {
       alert(`Porcentagem deve ser dividida sem ultrapassar 100 porcento, Sua porcentagem passou ${totalPorcentagem - 100}%`)
@@ -112,7 +111,7 @@ class DadosController {
     const dados = await Dados.findOne({
       where: { id: req.params.id }
     })
-    const { firstname, lastname, participation } = await dados.destroy(req.body);
+    await dados.destroy(req.body);
     res.json({})
   }
 }

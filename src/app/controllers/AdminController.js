@@ -75,6 +75,15 @@ class AdminController {
 
     return res.json({ name, email});
   }
+
+  
+  async delete(req, res) {
+    const admin = await Admin.findOne({
+      where: { id: req.params.id }
+    })
+     await admin.destroy(req.body);
+    res.json({})
+  }
 }
 
 export default new AdminController();
