@@ -1,5 +1,6 @@
 import * as Yup from 'yup';
 import Admin from '../models/Admin';
+import alert from 'alert'
 
 
 class AdminController {
@@ -19,8 +20,9 @@ class AdminController {
     }
 
     const adminExists = await Admin.findOne({ where: { email: req.body.email } });
-
-    if (adminExists) {
+    console.log(adminExists)
+    if (adminExists !== null) {
+      alert(`Email ja esta cadastrado`)
       return res.status(400).json({ error: 'Este email ja esta cadastrado' });
     }
     const { id, name, email } = await Admin.create(req.body);

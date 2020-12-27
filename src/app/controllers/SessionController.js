@@ -2,6 +2,7 @@ import jwt from 'jsonwebtoken';
 import * as Yup from 'yup';
 import authConfig from '../../config/auth';
 import Admin from '../models/Admin';
+import alert from 'alert'
 
 
 class SessionController {
@@ -14,7 +15,7 @@ class SessionController {
     });
 
     if (!(await schema.isValid(req.body))) {
-      return res.status(400).json({ error: 'Validaticao Falhou' });
+      return res.status(400).json({ error: 'Validacao Falhou' });
     }
 
     const { email, password } = req.body;
@@ -25,10 +26,12 @@ class SessionController {
     });
 
     if (!admin) {
+      alert('admin nao encontrado')
       return res.status(401).json({ error: 'admin nao encontrado' });
     }
 
     if (!(await admin.checkPassword(password))) {
+      alert('Senha nao encontrada')
       return res.status(401).json({ error: 'Password nao encontrado' });
     }
 

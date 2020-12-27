@@ -10,10 +10,10 @@ class DadosController {
       lastname: Yup.string().required(),
       participation: Yup.number().required().min(0.1).max(100),
     });
-
     if (!(await schema.isValid(req.body))) {
-      return res.status(400).json({ error: 'Validacao Falhou' });
+      return console.log( 'Validacao Falhou' );
     }
+   
     let totalPorcentagem = 0
     const dados = await Dados.findAll({
       attributes: ['participation'],

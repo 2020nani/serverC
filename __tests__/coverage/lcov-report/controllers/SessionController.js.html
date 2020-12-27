@@ -23,9 +23,9 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">54% </span>
+                <span class="strong">50.94% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>27/50</span>
+                <span class='fraction'>27/53</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">54% </span>
+                <span class="strong">50.94% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>27/50</span>
+                <span class='fraction'>27/53</span>
             </div>
         
             
@@ -106,38 +106,44 @@
 <a name='L47'></a><a href='#L47'>47</a>
 <a name='L48'></a><a href='#L48'>48</a>
 <a name='L49'></a><a href='#L49'>49</a>
-<a name='L50'></a><a href='#L50'>50</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<a name='L50'></a><a href='#L50'>50</a>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
-<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">8x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
+<span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -159,9 +165,10 @@
 import * as Yup from 'yup';
 import authConfig from '../../config/auth';
 import Admin from '../models/Admin';
-&nbsp;
-&nbsp;
-class S<span class="branch-0 cbranch-no" title="branch not covered" >essionController {</span>
+import aler<span class="branch-0 cbranch-no" title="branch not covered" >t from 'alert'</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >class SessionController {</span>
 <span class="cstat-no" title="statement not covered" >  async store(req, res) {</span>
 <span class="cstat-no" title="statement not covered" >    const schema = Yup.object().shape({</span>
 <span class="cstat-no" title="statement not covered" >      email: Yup.string()</span>
@@ -171,7 +178,7 @@ class S<span class="branch-0 cbranch-no" title="branch not covered" >essionContr
     });
 &nbsp;
     if (!(await schema.isValid(req.body))) {
-      return res.status(400).json({ error: 'Validaticao Falhou' });
+      return res.status(400).json({ error: 'Validacao Falhou' });
     }
 &nbsp;
     const { email, password } = req.body;
@@ -182,11 +189,13 @@ class S<span class="branch-0 cbranch-no" title="branch not covered" >essionContr
     });
 &nbsp;
     if (!admin) {
+      alert('admin nao encontrado')
       return res.status(401).json({ error: 'admin nao encontrado' });
     }
 &nbsp;
     if (!(await admin.checkPassword(password))) {
-      return res.status(401).json({ error: 'Password nao e<span class="fstat-no" title="function not covered" >ncontrado' });</span>
+      alert('Senha nao encontrada')
+      return res.status(401).json({ e<span class="fstat-no" title="function not covered" >rror: 'Password nao encontrado' });</span>
 <span class="cstat-no" title="statement not covered" >    }</span>
 <span class="cstat-no" title="statement not covered" ></span>
 <span class="cstat-no" title="statement not covered" >    const { id, name} = admin;</span>
@@ -211,7 +220,7 @@ class S<span class="branch-0 cbranch-no" title="branch not covered" >essionContr
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Tue Dec 22 2020 01:37:15 GMT-0300 (GMT-03:00)
+                at Fri Dec 25 2020 11:49:53 GMT-0300 (GMT-03:00)
             </div>
         </div>
         <script src="../prettify.js"></script>
