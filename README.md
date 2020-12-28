@@ -61,7 +61,7 @@ Rode o programa em seu computador na porta 3333 com os seguintes comando
 - `npm run dev` ou 
 - `yarn dev` caso tenha yarn instalado em sua maquina
 
-## Rodar testes end-to-end com cypress
+## Rodar testes TDD com jest
 
 Rode o seguinte comando 
 - `npm run test` ou 
