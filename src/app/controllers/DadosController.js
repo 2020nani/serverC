@@ -1,3 +1,12 @@
+/*
+    Dados do server
+   * Nome : CotaboxTesteServer
+   * Objetivo: Fornecer e receber dados para o frontend
+   * Desenvolvedor: Hernani Almeida
+   * data criacao: 22/12/2020 - 27/12/2020
+   
+*/
+
 import * as Yup from 'yup';
 import Dados from '../models/Dados';
 import alert from 'alert'
@@ -13,21 +22,18 @@ class DadosController {
     if (!(await schema.isValid(req.body))) {
       return res.status(400).json({ error: 'Validacao Falhou' });
     }
-   
+   /*define totalPorcentagem como 0*/
     let totalPorcentagem = 0
+    /*define totalPorcentagem somando os dados particpation cadastrado no server*/
     const dados = await Dados.findAll({
       attributes: ['participation'],
     })
     dados.map(a => {
       totalPorcentagem = totalPorcentagem + parseInt(a.dataValues.participation)
     })
-
-    const {
-      firstname,
-      lastname,
-      participation,
-
-    } = req.body
+    /*pega o dado digitado pelo usuario no campo participation */
+    const { participation } = req.body
+    /*soma totalPorcentagem com o dado requerido pelo usuario para validar se nao passa de 100*/
     totalPorcentagem = totalPorcentagem + parseInt(participation)
 
     if (totalPorcentagem <= 100) {
@@ -51,15 +57,10 @@ class DadosController {
     })
     return res.json(dados)
   }
-  async index1(req, res) {
-    const dados = await Dados.findOne({
-      where: { id: req.params.id }
-
-    })
-    return res.json(dados)
-  }
+ 
 
   async update(req, res) {
+     /*valida dados recebidos */
     const schema = Yup.object().shape({
       firstname: Yup.string().required(),
       lastname: Yup.string().required(),
@@ -69,7 +70,10 @@ class DadosController {
     if (!(await schema.isValid(req.body))) {
       return res.status(400).json({ error: 'Validacao Falhou' });
     }
+     /*define totalPorcentagem como 0*/
     let totalPorcentagem = 0
+
+    /*define totalPorcentagem somando os dados particpation cadastrado no server*/
     const dados = await Dados.findAll({
       attributes: ['participation'],
     })
@@ -80,7 +84,7 @@ class DadosController {
     const dadosPessoa = await Dados.findOne({
       where: { id: req.params.id }
     })
-
+  /*soma totalPorcentagem com o dado participation ja definido para a pessoa */
     totalPorcentagem = totalPorcentagem - parseInt(dadosPessoa.dataValues.participation)
 
 
@@ -89,6 +93,7 @@ class DadosController {
       lastname, 
       participation 
     } = req.body;
+     /*soma totalPorcentagem com o dado requerido pelo usuario para validar se nao passa de 100*/
     totalPorcentagem = totalPorcentagem + parseInt(participation)
    
     if (totalPorcentagem <= 100) {

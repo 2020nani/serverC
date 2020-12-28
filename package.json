@@ -9,9 +9,7 @@
     "dev": "nodemon src/server.js",
     "start": "nodemon src/server.js",
     "build": "sucrase ./src -d ./dist --transforms imports",
-    "pretest": "set NODE_ENV=test && sequelize db:migrate",
-    "test": " set NODE_ENV=test && jest",
-    "posttest": " set NODE_ENV=test && sequelize db:migrate:undo:all --to 20200729034321-create-dates.js "
+    "test": " set NODE_ENV=test && jest"
   },
   "dependencies": {
     "alert": "^5.0.8",

@@ -1,3 +1,12 @@
+/*
+    Dados do server
+   * Nome : CotaboxTesteServer
+   * Objetivo: Fornecer e receber dados para o frontend
+   * Desenvolvedor: Hernani Almeida
+   * data criacao: 22/12/2020 - 27/12/2020
+   
+*/
+
 import * as Yup from 'yup';
 import Admin from '../models/Admin';
 import alert from 'alert'

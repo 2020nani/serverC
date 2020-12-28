@@ -1,3 +1,13 @@
+/*
+    Dados do server
+   * Nome : CotaboxTesteServer
+   * Objetivo: Fornecer e receber dados para o frontend
+   * Desenvolvedor: Hernani Almeida
+   * data criacao: 22/12/2020 - 27/12/2020
+   
+*/
+
+/*exporta variaveis de test e desenvolvimento para acesso ao database*/
 require('../bootstrap');
 console.log(process.env.NODE_ENV)
 module.exports = {
@@ -7,11 +17,11 @@ module.exports = {
   database: process.env.DB_NAME,
   dialect: process.env.DB_DIALECT || 'postgres',
   storage: './__tests__/database.sqlite',
-  /* logging: false,
+  logging: false,
   ssl:  process.env.SSL_DB || false,
   dialectOptions: {
             ssl:  process.env.SSL_DB || false
-        },*/
+        },
   define: {
     timestamps: true,
     underscored: true,

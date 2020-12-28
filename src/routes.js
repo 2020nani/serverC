@@ -1,3 +1,12 @@
+/*
+    Dados do server
+   * Nome : CotaboxTesteServer
+   * Objetivo: Fornecer e receber dados para o frontend
+   * Desenvolvedor: Hernani Almeida
+   * data criacao: 22/12/2020 - 27/12/2020
+   
+*/
+
 import { Router } from 'express';
 import AdminController from './app/controllers/AdminController';
 import SessionController from './app/controllers/SessionController';
@@ -14,12 +23,13 @@ const routes = new Router();
 routes.post('/login', SessionController.store);
 routes.post('/admins', AdminController.store);
 routes.use(authMiddleware);
+/*rotas so serao acessadas com o jwttoken*/
 routes.put('/admins/:id', AdminController.update);
 routes.delete('/admins/:id', AdminController.delete);
 routes.post('/dados', checkFirstName, DadosController.store);
 routes.put('/dados/:id', DadosController.update);
 routes.delete('/dados/:id', DadosController.delete);
 routes.get('/dados', DadosController.index);
-routes.get('/dados/:id', DadosController.index1)
+
 
 module.exports = routes;

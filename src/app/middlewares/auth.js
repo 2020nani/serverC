@@ -1,4 +1,5 @@
-  
+ 
+ /*middleware que torna acesso as rotas restrito a quem tiver jsonwebtoken*/
 import jwt from 'jsonwebtoken';
 import { promisify } from 'util';
 

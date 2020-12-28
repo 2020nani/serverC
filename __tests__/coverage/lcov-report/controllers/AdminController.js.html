@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.39% </span>
+                <span class="strong">83.67% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>76/89</span>
+                <span class='fraction'>82/98</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">80% </span>
+                <span class="strong">80.95% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>16/20</span>
+                <span class='fraction'>17/21</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">85.39% </span>
+                <span class="strong">83.67% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>76/89</span>
+                <span class='fraction'>82/98</span>
             </div>
         
             
@@ -145,14 +145,24 @@
 <a name='L86'></a><a href='#L86'>86</a>
 <a name='L87'></a><a href='#L87'>87</a>
 <a name='L88'></a><a href='#L88'>88</a>
-<a name='L89'></a><a href='#L89'>89</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
+<a name='L89'></a><a href='#L89'>89</a>
+<a name='L90'></a><a href='#L90'>90</a>
+<a name='L91'></a><a href='#L91'>91</a>
+<a name='L92'></a><a href='#L92'>92</a>
+<a name='L93'></a><a href='#L93'>93</a>
+<a name='L94'></a><a href='#L94'>94</a>
+<a name='L95'></a><a href='#L95'>95</a>
+<a name='L96'></a><a href='#L96'>96</a>
+<a name='L97'></a><a href='#L97'>97</a>
+<a name='L98'></a><a href='#L98'>98</a></td><td class="line-coverage quiet"><span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-no">&nbsp;</span>
@@ -162,7 +172,15 @@
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">6x</span>
 <span class="cline-any cline-yes">6x</span>
-<span class="cline-any cline-yes">6x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
@@ -233,20 +251,29 @@
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span></td><td class="text"><pre class="prettyprint lang-js">import * as Yup from 'yup';
-import Admin from '../models/Admin';
-import alert from 'alert'
-&nbsp;
-&nbsp;
-class AdminController {
+<span class="cline-any cline-yes">3x</span></td><td class="text"><pre class="prettyprint lang-js">/*
+    Dados do server
+   * Nome : CotaboxTesteServer
+   * Objetivo: Fornecer e receber dados para o frontend
+   * Desenvolvedor: Hernani Almeida
+   * <span class="branch-0 cbranch-no" title="branch not covered" >data criacao: 22/12/2020 - 27/12/2020</span>
+<span class="cstat-no" title="statement not covered" >   </span>
+<span class="cstat-no" title="statement not covered" >*/</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >import * as Yup from 'yup';</span>
+<span class="cstat-no" title="statement not covered" >import Admin from '../models/Admin';</span>
+<span class="cstat-no" title="statement not covered" >import alert from 'alert'</span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" ></span>
+<span class="cstat-no" title="statement not covered" >class AdminController {</span>
   async store(req, res) {
-    co<span class="branch-0 cbranch-no" title="branch not covered" >nst schema = Yup.object().shape({</span>
-<span class="cstat-no" title="statement not covered" >      name: Yup.string().required(),</span>
-<span class="cstat-no" title="statement not covered" >      email: Yup.string()</span>
-<span class="cstat-no" title="statement not covered" >        .email()</span>
-<span class="cstat-no" title="statement not covered" >        .required(),</span>
-<span class="cstat-no" title="statement not covered" >      password: Yup.string()</span>
-<span class="cstat-no" title="statement not covered" >        .required()</span>
+    const schema = Yup.object().shape({
+      name: Yup.string().required(),
+      email: Yup.string()
+        .email()
+        .required(),
+      password: Yup.string()
+        .required()
         .min(6),
     });
 &nbsp;
@@ -328,7 +355,7 @@ export default new AdminController();</pre></td></tr></table></pre>
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank">istanbul</a>
-                at Sun Dec 27 2020 16:42:30 GMT-0300 (GMT-03:00)
+                at Mon Dec 28 2020 00:57:23 GMT-0300 (GMT-03:00)
             </div>
         </div>
         <script src="../prettify.js"></script>
