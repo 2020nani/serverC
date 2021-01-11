@@ -31,11 +31,11 @@ Apos clonar o projeto em seu computador e necessario instalar as dependencias qu
 
 Crie um arquivo .env conforme o arquivo .env.example e preencha com as variaveis de ambiente para acessar seu banco de dados
 
-DB_HOST=localhost
-DB_USER= nome de usuario do banco de dados, no docker o nome e postgres por default
-DB_PASS= senha para acessar banco de dados
-DB_NAME= nome do database que sera criado
-APP_SECRET=66dc49adcfb9aefb042c8d441c3653df
+- DB_HOST=localhost
+- DB_USER= nome de usuario do banco de dados, no docker o nome e - postgres por default
+- DB_PASS= senha para acessar banco de dados
+- DB_NAME= nome do database que sera criado
+- APP_SECRET=66dc49adcfb9aefb042c8d441c3653df
 
 Crie um container docker para rodar uma imagem postgres para o banco de dados com o comando
 
@@ -60,4 +60,5 @@ Rode o programa em seu computador na porta 3333 com os seguintes comando
 Rode o seguinte comando 
 - `npm run test` ou 
 `yarn test` 
+
 
